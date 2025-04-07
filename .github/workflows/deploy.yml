@@ -24,8 +24,8 @@ jobs:
 
       - name: Install dependencies with retry
         run: |
-          npm install --prefer-offline || npm install --force
-          npm ci || npm install --force # Fallback if no lock file exists
+          npm install --force --no-audit --no-fund || (sleep 5 && npm install --force --no-audit --no-fund)
+          npm ci --force || npm install --force # Generate lock file if missing
 
       - name: Build
         run: npm run build
