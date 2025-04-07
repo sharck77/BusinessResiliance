@@ -17,18 +17,16 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-          cache: 'npm'
+          cache: 'yarn'
 
-      - name: Clear npm cache
-        run: npm cache clean --force
+      - name: Install Yarn
+        run: npm install -g yarn
 
-      - name: Install dependencies with retry
-        run: |
-          npm install --force --no-audit --no-fund || (sleep 5 && npm install --force --no-audit --no-fund)
-          npm ci --force || npm install --force # Generate lock file if missing
+      - name: Install dependencies with Yarn
+        run: yarn install --force
 
       - name: Build
-        run: npm run build
+        run: yarn react-scripts build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
