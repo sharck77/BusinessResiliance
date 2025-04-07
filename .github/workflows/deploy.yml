@@ -23,7 +23,7 @@ jobs:
         run: npm install -g yarn
 
       - name: Install dependencies with Yarn
-        run: yarn install --force
+        run: yarn install --force # Generates yarn.lock if missing
 
       - name: Build
         run: yarn react-scripts build
