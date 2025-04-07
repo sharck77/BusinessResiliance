@@ -17,16 +17,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-          cache: 'yarn'
-
-      - name: Install Yarn
-        run: npm install -g yarn
+          cache: 'npm'
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile # Uses yarn.lock as-is
+        run: npm install --legacy-peer-deps
 
       - name: Build
-        run: yarn react-scripts build
+        run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
