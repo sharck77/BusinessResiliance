@@ -19,17 +19,12 @@ jobs:
           node-version: '18'
           cache: 'npm'
 
-      - name: Install dependencies
+      - name: Install dependencies (and generate package-lock.json)
         run: |
           npm install --legacy-peer-deps
-        working-directory: ./  # Ensure you're in the correct directory where package.json is located
+        working-directory: ./  # Ensure you're in the correct directory
 
-      - name: Generate package-lock.json
-        run: |
-          npm install --legacy-peer-deps
-        working-directory: ./  # This ensures the lock file gets created
-
-      - name: Build
+      - name: Build the project
         run: npm run build
         working-directory: ./  # Ensure you're in the correct directory
 
