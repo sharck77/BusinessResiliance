@@ -19,8 +19,10 @@ jobs:
           node-version: '18'
           cache: 'npm'
 
-      - name: Install dependencies
-        run: npm install
+      - name: Install dependencies and generate lock file
+        run: |
+          npm ci || npm install
+          npm install --package-lock-only # Generates package-lock.json if missing
 
       - name: Build
         run: npm run build
