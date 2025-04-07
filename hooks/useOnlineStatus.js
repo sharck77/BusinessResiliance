@@ -1,4 +1,3 @@
-// hooks/useOnlineStatus.js
 import { useState, useEffect } from 'react';
 import NetInfo from '@react-native-community/netinfo';
 
