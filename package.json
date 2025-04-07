@@ -1,7 +1,7 @@
 {
   "name": "business-resilience-app",
   "version": "1.0.0",
-  "homepage": "https://<your-username>.github.io/<repository-name>",
+  "homepage": "https://github.com/sharck77/BusinessResiliance",
   "private": true,
   "dependencies": {
     "react": "18.2.0",
