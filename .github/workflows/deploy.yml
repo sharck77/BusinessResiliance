@@ -21,8 +21,8 @@ jobs:
 
       - name: Install dependencies and generate lock file
         run: |
-          npm ci || npm install
-          npm install --package-lock-only # Generates package-lock.json if missing
+          npm install # Forces lock file creation if missing
+          npm ci || npm install # Ensures dependencies are installed
 
       - name: Build
         run: npm run build
