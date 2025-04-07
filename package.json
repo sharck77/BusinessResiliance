@@ -6,7 +6,10 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "lucide-react": "^0.263.0"
+    "lucide-react": "^0.263.0",
+    "@radix-ui/react-tabs": "^1.0.4",
+    "@radix-ui/react-scroll-area": "^1.0.4",
+    "@radix-ui/react-slot": "^1.0.2"
   },
   "devDependencies": {
     "react-scripts": "^5.0.1"
